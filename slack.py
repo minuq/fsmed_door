@@ -33,7 +33,7 @@ def update_slack(text,ts):
 def main(tsfile,message):
     message = "("+datetime.now().strftime("%d.%m.%Y - %H:%M:%S")+") » "+message
     try:
-        if (os.path.isfile(tsfile)):
+        if (os.path.isfile("/home/pi/fsdoor/"+tsfile)):
             f = open("/home/pi/fsdoor/"+tsfile,"r")
             ts = f.read()
             res = update_slack("{0}".format(message),str(ts))
