@@ -34,14 +34,14 @@ def main(tsfile,message):
     message = "("+datetime.now().strftime("%d.%m.%Y - %H:%M:%S")+") » "+message
     try:
         if (os.path.isfile(tsfile)):
-            f = open(tsfile,"r")
+            f = open("/home/pi/fsdoor/"+tsfile,"r")
             ts = f.read()
             res = update_slack("{0}".format(message),str(ts))
             print(res)
             f.close()
         else: 
             res = post_to_slack("{0}".format(message))
-            f = open(tsfile,"w")
+            f = open("/home/pi/fsdoor/"+tsfile,"w")
             f.write(res["ts"])
             print(res)
             f.close()
