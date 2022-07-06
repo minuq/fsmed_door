@@ -1,0 +1,6 @@
+[Unit]
+Description=Display status tracking service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/pi/fsdoor/display.py

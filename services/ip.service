@@ -1,0 +1,6 @@
+[Unit]
+Description=IP tracking service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/pi/fsdoor/ip.py

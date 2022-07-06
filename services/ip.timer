@@ -1,0 +1,11 @@
+[Unit]
+Description=Run ip tracker periodically
+
+[Timer]
+Unit=ip.service
+OnBootSec=1min
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
