@@ -7,7 +7,7 @@ import slack
 
 def main():
     try:
-        now = datetime.now().strftime("%H_%M_%S")
+        now = datetime.now().strftime("%H")
         print(now)
         custom_env = os.environ.copy()
         custom_env["DISPLAY"] = ":0"
