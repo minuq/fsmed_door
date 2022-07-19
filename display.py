@@ -1,6 +1,8 @@
 from subprocess import check_output
 from datetime import datetime
 import slack
+import scrot
+
 
 try:
     now = int(datetime.now().strftime("%H"))
@@ -14,3 +16,5 @@ try:
     print(res)
 except Exception as err:
     print(str("error: {0}".format(err)))
+
+scrot.main()
