@@ -10,6 +10,15 @@ channel = secrets.channel
 username = secrets.username
 icon_emoji= secrets.icon_emoji
 
+def upload_image(img):
+    return requests.post('https://slack.com/api/files.upload',{
+        'token': token,
+        'channel': channel,
+        'content': img,
+        'filename': 'screenshot.png',
+        'unfurl_media': False,
+        'as_user': True
+    }).json()
 
 def post_to_slack(text):
     return requests.post('https://slack.com/api/chat.postMessage', {
